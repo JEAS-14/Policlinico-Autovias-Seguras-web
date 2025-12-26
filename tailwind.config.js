@@ -8,8 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#0284c7', // Azul Médico
-        'secondary': '#0f172a', // Azul Oscuro
+        'brand-purple': '#421D9D', // Morado Letras
+        'brand-dark': '#2E1A5F',   // Morado Botones
+        'brand-teal': '#40C3B8',   // Turquesa (lo mantengo para "Seguras")
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
       }
     },
   },

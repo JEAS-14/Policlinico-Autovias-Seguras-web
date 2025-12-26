@@ -1,24 +1,27 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+// 1. Importamos los componentes
+import { Header } from './components/layout/Header.js';
+import { Footer } from './components/layout/Footer.js';
+// 2. Definimos dónde vamos a renderizar
+const app = document.querySelector('#app');
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+// 3. Inyectamos el HTML (Renderizado)
+app.innerHTML = `
+  ${Header()}
+  <main id="contenido-principal" class="pt-20">
+    <div class="h-screen flex items-center justify-center bg-gray-100">
+      <h1 class="text-2xl text-gray-400">Pronto: Banner Principal...</h1>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+  </main>
+${Footer()} `;
 
-setupCounter(document.querySelector('#counter'))
+// 4. Lógica de interactividad (Después de renderizar)
+// Activamos el menú móvil después de que el HTML ya existe en el DOM
+const btnMenu = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if(btnMenu && mobileMenu) {
+  btnMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+}
